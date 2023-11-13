@@ -22,7 +22,7 @@ public class SkillController {
     private JobRepository jobRepository;
     @Autowired
     private EmployerRepository employerRepository;
-    @GetMapping("")
+    @GetMapping("/")
     public String index(Model model){
         model.addAttribute("skills", skillRepository.findAll());
         return "skills/index";
