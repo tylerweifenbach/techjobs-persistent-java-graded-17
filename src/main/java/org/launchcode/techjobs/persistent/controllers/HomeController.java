@@ -29,7 +29,7 @@ public class HomeController {
     @Autowired
     private JobRepository jobRepository;
 
-    @RequestMapping("")
+    @GetMapping("/")
     public String index(Model model) {
 
         model.addAttribute("title", "My Jobs");
@@ -40,6 +40,7 @@ public class HomeController {
 
     @GetMapping("add")
     public String displayAddJobForm(Model model) {
+        System.out.println("asdfasdf");
         model.addAttribute("title", "Add Job");
         model.addAttribute("skills", skillRepository.findAll());
         model.addAttribute("employers", employerRepository.findAll());
